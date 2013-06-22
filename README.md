@@ -1,4 +1,4 @@
 rest-yii
 ========
 
-yii rest application
+Example of an rest yii application
