@@ -1,4 +1,5 @@
 <?php
+
 /**
  * main.php is the configuration file for application
  *
@@ -11,47 +12,47 @@
  * @link     http://github.com/elderdosantos/rest-yii
  */
 return array(
-    'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-    'name'=>'My Web Application',
+    'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+    'name' => 'My Web Application',
     // preloading 'log' component
-    'preload'=>array('log'),
+    'preload' => array('log'),
     // autoloading model and component classes
-    'import'=>array(
+    'import' => array(
         'application.models.*',
         'application.components.*',
     ),
-    'modules'=>array(),
+    'modules' => array(),
     // application components
-    'components'=>array(
-        'user'=>array(
+    'components' => array(
+        'user' => array(
             // enable cookie-based authentication
-            'allowAutoLogin'=>true,
+            'allowAutoLogin' => true,
         ),
-        'errorHandler'=>array(
-            'errorAction'=>'site/error',
+        'errorHandler' => array(
+            'errorAction' => 'site/error',
         ),
-        'log'=>array(
-            'class'=>'CLogRouter',
-            'routes'=>array(
+        'log' => array(
+            'class' => 'CLogRouter',
+            'routes' => array(
                 array(
-                    'class'=>'CFileLogRoute',
-                    'levels'=>'error, warning',
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning',
                 ),
             ),
         ),
-        'urlManager' => array (
+        'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => true,
             'rules' => array(
-                array('usuario/list',   'pattern' => 'usuario',      'verb' => 'GET', 'parsingOnly' => true),
-                array('usuario/insert', 'pattern' => 'usuario',      'verb' => 'POST', 'parsingOnly' => true),
-                array('usuario/delete', 'pattern' => 'usuario/<id>', 'verb' => 'DELETE', 'parsingOnly' => true),
-                array('usuario/get',    'pattern' => 'usuario/<id>', 'verb' => 'GET', 'parsingOnly' => true),
-                array('usuario/update', 'pattern' => 'usuario/<id>', 'verb' => 'PUT', 'parsingOnly' => true),
+                array('usuario/list', 'pattern' => 'usuarios', 'verb' => 'GET', 'parsingOnly' => true),
+                array('usuario/insert', 'pattern' => 'usuarios', 'verb' => 'POST', 'parsingOnly' => true),
+                array('usuario/delete', 'pattern' => 'usuarios/<id>', 'verb' => 'DELETE', 'parsingOnly' => true),
+                array('usuario/get', 'pattern' => 'usuarios/<id>', 'verb' => 'GET', 'parsingOnly' => true),
+                array('usuario/update', 'pattern' => 'usuarios/<id>', 'verb' => 'PUT', 'parsingOnly' => true),
             )
         ),
     ),
-    'params'=>array(
-        'adminEmail'=>'webmaster@example.com',
+    'params' => array(
+        'adminEmail' => 'webmaster@example.com',
     ),
 );

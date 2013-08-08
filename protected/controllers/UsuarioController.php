@@ -1,43 +1,41 @@
 <?php
+
 class UsuarioController extends Controller {
-	public function actionInsert()
-	{
-		$usuario = new Usuario();
-		$usuario->setAttributes($this->getRequestPayload());
-		$usuario->save();
 
-		$this->send($usuario->attributes);
-	}
+    public function actionInsert() {
+        $usuario = new Usuario();
+        $usuario->setAttributes($this->getRequestPayload());
+        $usuario->save();
 
-	public function actionUpdate($id)
-	{
-		$usuario = Usuario::model()->findByPk($id);
-		$usuario->setAttributes($this->getRequestPayload());
+        $this->send($usuario->attributes);
+    }
 
-		$usuario->save();
+    public function actionUpdate($id) {
+        $usuario = Usuario::model()->findByPk($id);
+        $usuario->setAttributes($this->getRequestPayload());
 
-		$this->send('Atualizado com sucesso');
-	}
+        $usuario->save();
 
-	public function actionDelete($id)
-	{
-		$usuario = Usuario::model()->findByPk($id);
-		$usuario->delete();
+        $this->send('Atualizado com sucesso');
+    }
 
-		$this->send('Deletado com sucesso');
-	}
+    public function actionDelete($id) {
+        $usuario = Usuario::model()->findByPk($id);
+        $usuario->delete();
 
-	public function actionGet($id)
-	{
-		$usuario = Usuario::model()->findByPk($id);
+        $this->send('Deletado com sucesso');
+    }
 
-		$this->send($usuario->attributes);
-	}
+    public function actionGet($id) {
+        $usuario = Usuario::model()->findByPk($id);
 
-	public function actionList()
-	{
-		$usuario = new Usuario();
+        $this->send($usuario->attributes);
+    }
 
-		$this->send($usuario->search()->getData());
-	}
+    public function actionList() {
+        $usuario = new Usuario();
+
+        $this->send($usuario->search()->getData());
+    }
+
 }
